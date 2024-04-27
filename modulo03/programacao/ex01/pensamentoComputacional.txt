@@ -1,0 +1,28 @@
+# Decomposicao
+- Saber a idade da pessoa
+- Saber o peso da pessoa
+- Calcular o IMC da pessoa
+- Classificar a pessoa é >= 20 e <= 60
+- Informar a pessoa que ela não tem idade adequada quando não está no intervalor definido
+
+# Reconhecimento de padrões
+- Somente pessoas de 20 a 60 anos
+- Altura é sempre em metros
+- Peso é sempre em Kilos
+- A classificação depende de um intervalo de imc
+- Cada faixa de valor do IMC possui uma classificação
+- Sempre precisa da altura e do peso para o cálculo
+- Tem apenas 4 faixas de resultados para classificar
+
+# Abstração
+- Calcular o IMC e classificar somente as pessoas que possuem idade entre 20 e 60 anos
+
+# Pensamento Algoritmico
+- Perguntar a idade da pessoa
+- Validar que a idade informada está entre o intervalo de 20 a 60 anos (inclusive)
+- Se não estiver dentro da faixa permitida de idade, informar a pessoa sobre isso e parar a execução
+- Perguntar a altura da pessoa em metros
+- Perguntar o peso da pessoa em Kilos
+- Calcular o IMC da pessoa na fórmula peso / (altura * altura)
+- Classificar o imc dentro das faixas já disponibilizadas
+- Dizer a classificação que a pessoa teve

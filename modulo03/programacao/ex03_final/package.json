@@ -1,0 +1,14 @@
+{
+  "name": "programacao_para_automacao",
+  "version": "1.0.0",
+  "description": "exercicio_final",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.test.js"
+  },
+  "author": "leonardo_padilha",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
+}
