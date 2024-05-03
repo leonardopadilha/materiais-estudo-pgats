@@ -61,7 +61,14 @@ npm test
 
 ### 3. Pensamento computacional
         
-| Decomposição                   | Reconhecimento de padrão       | Abstração                      | Pensamento Algorítmico         |
+| Decomposição                  | Reconhecimento de padrão     | Abstração                    | Pensamento Algorítmico    |
+|-------------------------------|------------------------------|------------------------------|----------------------------|
+| Criar uma lista com ferramentas de automação e outra lista com a ferramenta desejada. | Nenhuma das listas pode estar vazia. | Não é preciso se preocupar com quais ferramentas serão informadas. | Verificar se uma ou mais listas estão vazias. |
+|                               | Cada lista deve conter pelo menos 1 elemento. | O teste passa quando pelo menos um item na lista de comprar é encontrado na lista de ferramentas. | Verificar se algum item da lista de comprar foi encontrado na lista de ferramentas. |
+|                               | Os itens descritos na lista de ferramentas, deverão conter: nome, preço e fabricante. |  | Se um item da lista de comprar foi encontrado em ferramentas, deve ser salvo o(s) nome(s) para serem apresentados assim como o valor total para pagamento. |
+|                               |                                | Quando nenhum item na lista de comprar é encontrado na lista de ferramentas, deve retornar uma mensagem para o usuário. |  |
+|                               |                                | Quando uma ou mais lista estiver vazia, deve retornar uma mensagem para o usuário. | Se o nenhum item na lista de ferramentas for encontrado o usuário deverá ser notificado. |
+|                               |                                |                                | Se uma ou ambas as listas estiverem vazias, o usuário deverá ser notificado. |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|
 | Criar uma lista com ferramentas| Nenhuma das listas pode estar  | Não é preciso se preocupar com | Verificar se uma ou mais listas|
 | de automação e outra lista com | vazia.                         | quais ferramentas serão        | estão vazias.                  |
