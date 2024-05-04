@@ -29,7 +29,7 @@ Para começar a trabalhar neste projeto, siga os passos abaixo para configurar o
 }
 ```
 
-### 4. Estrutura das pastas
+### 5. Estrutura das pastas
 
 ```
 projeto/
@@ -58,3 +58,28 @@ npm install
 ```
 npm test
 ```
+
+### 3. Pensamento computacional
+
+Aqui está a tabela transformada em bullet points:
+
+- **Decomposição**
+  - Criar uma lista com ferramentas e outra lista com a ferramenta desejada.
+
+- **Reconhecimento de padrão**
+  - Nenhuma das listas pode estar vazia.
+  - Cada lista deve conter pelo menos 1 elemento.
+  - Os itens descritos na lista de ferramentas, deverão conter: nome, preço e fabricante.
+
+- **Abstração**
+  - Não é preciso se preocupar com quais ferramentas serão informadas.
+  - O teste passa quando pelo menos um item na lista de comprar é encontrado na lista de ferramentas.
+  - Quando nenhum item na lista de comprar é encontrado na lista de ferramentas, deve retornar uma mensagem para o usuário.
+  - Quando uma ou mais lista estiver vazia, deve retornar uma mensagem para o usuário.
+
+- **Pensamento Algorítmico**
+  - Verificar se uma ou mais listas estão vazias.
+  - Verificar se algum item da lista de comprar foi encontrado na lista de ferramentas.
+  - Se um item da lista de comprar foi encontrado em ferramentas, deve ser salvo o(s) nome(s) para serem apresentados assim como o valor total para pagamento.
+  - Se nenhum item na lista de ferramentas for encontrado, o usuário deverá ser notificado.
+  - Se uma ou ambas as listas estiverem vazias, o usuário deverá ser notificado.
