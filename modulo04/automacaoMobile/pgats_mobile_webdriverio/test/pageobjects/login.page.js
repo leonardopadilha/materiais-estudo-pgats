@@ -1,41 +1,34 @@
-const { $ } = require('@wdio/globals')
-const Page = require('./page');
+import { $ } from '@wdio/globals'
+import ListaDeProdutosPage from './listaDeProdutos.page.js'
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
-class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () {
-        return $('#username');
+export default class LoginPage {
+    get inputUsuario() { 
+        return $('android=new UiSelector().packageName("com.example.lojinha").className("android.widget.EditText").instance(0)')
     }
 
-    get inputPassword () {
-        return $('#password');
+    get inputSenha() { 
+       return $('android=new UiSelector().resourceId("senha")')
+    }
+    
+    get btnEntrar() {
+       return $('android=new UiSelector().text("ENTRAR")')
     }
 
-    get btnSubmit () {
-        return $('button[type="submit"]');
+    async login(usuario, senha) {
+        await this.inputUsuario.setValue(usuario)
+        await this.inputSenha.setValue(senha)
     }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
-    async login (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+    async loginComFluentPage(usuario, senha) {
+        await Promise.all([
+            this.inputUsuario.setValue(usuario),
+            this.inputSenha.setValue(senha)
+        ])
+        await this.clickBtnEntrar()
+        return new ListaDeProdutosPage()
     }
 
-    /**
-     * overwrite specific options to adapt it to page object
-     */
-    open () {
-        return super.open('login');
+    async clickBtnEntrar() {
+        await this.btnEntrar.click()
     }
 }
-
-module.exports = new LoginPage();
