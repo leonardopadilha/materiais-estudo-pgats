@@ -20,6 +20,11 @@ beforeEach(async () => {
 describe('Delete item on product list screen', async () => {
     it('[APP - CT03] - Should create product with success', async () => {
         await listaDeProdutosPage.clickOnAddProduct()
-        await createProductPage.createProductWithComponent("Televisao", "1000,00", "Cinza", "Controle remoto", 2)
+        await createProductPage.createProduct("Televisao", "1000,00", "Cinza")
+        await createProductPage.clickOnSaveProduct()
+        await createProductPage.clickOnAddComponent()
+        await createProductPage.createComponent("Controle remoto", 2)
+        await createProductPage.clickOnSaveComponent()
+        await createProductPage.confirmRegisterComponent()
     })
 })

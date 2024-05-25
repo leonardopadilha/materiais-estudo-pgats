@@ -27,7 +27,7 @@ export default class CreateProductPage {
     }
 
     get buttonSaveComponent() {
-        return $(element.button.saveComponentScroll)
+        return $(element.button.saveComponent)
     }
 
     get inputComponentName() {
@@ -42,6 +42,14 @@ export default class CreateProductPage {
         return $(element.title.editProduct)
     }
 
+    get buttonTrash() {
+        return $(element.component.trash)
+    }
+
+    async existButtonTrash() {
+        await this.buttonTrash.waitForDisplayed({ timeout: 5000 })
+    }
+
     async getPageTitle() {
         await this.titleAddProduct.getText()
     }
@@ -50,17 +58,30 @@ export default class CreateProductPage {
         expect(await this.getPageTitle()).toEqual('Adicionar Produto')
     }
 
-    async createProductWithComponent(productName, productValue, productColors, componentName, componentQuantity) {
+    async createProduct(productName, productValue, productColors) {
         await this.inputProductName.setValue(productName)
         await this.inputProductValue.setValue(productValue)
         await this.inputProductColors.setValue(productColors)
+    }
 
+    async clickOnSaveProduct() {
         await this.buttonSaveProduct.click()
-        await this.buttonAddComponent.click()
+    }
 
+    async clickOnAddComponent() {
+        await this.buttonAddComponent.click()
+    }
+
+    async clickOnSaveComponent() {
+        await this.buttonSaveComponent.click()
+    }
+
+    async createComponent(componentName, componentQuantity) {
         await this.inputComponentName.setValue(componentName)
         await this.inputComponentQuantity.setValue(componentQuantity)
+    }
 
-        await this.buttonSaveComponent.click()
+    async confirmRegisterComponent() {
+        expect(await this.existButtonTrash()).toBeExisting()
     }
 }
