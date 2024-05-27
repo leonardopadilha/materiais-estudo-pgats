@@ -2,8 +2,13 @@ import { $, expect } from '@wdio/globals'
 import element from '../elements/createProductsScreen_elements'
 
 export default class CreateProductPage {
+
     get titleAddProduct() {
         return $(element.title.addProduct)
+    }
+
+    get titleEditProduct() {
+        return $(element.title.editProduct)
     }
 
     get inputProductName() {
@@ -30,6 +35,10 @@ export default class CreateProductPage {
         return $(element.button.saveComponent)
     }
 
+    get returnToProductList() {
+        return $(element.button.returnToProductList)
+    }
+
     get inputComponentName() {
         return $(element.input.componentName)
     }
@@ -38,26 +47,29 @@ export default class CreateProductPage {
         return $(element.input.componentQuantity)
     }
 
-    get titleEditProduct() {
-        return $(element.title.editProduct)
-    }
-
     get buttonTrash() {
         return $(element.component.trash)
+    }
+
+    async getTitleAddProduct() {
+        return await this.titleAddProduct.getText() 
+    }
+
+    async verifyTitleAddProduct() {
+        expect(await this.getTitleAddProduct()).toEqual("Adicionar produto ")
+    }
+
+    async getTitleEditProduct() {
+        return await this.titleEditProduct.getText()
+    }
+
+    async verifyTitleEditProduct() {
+        expect(await this.getTitleEditProduct()).toEqual('Editar produto ')
     }
 
     async existButtonTrash() {
         await this.buttonTrash.waitForDisplayed({ timeout: 5000 })
     }
-
-    async getPageTitle() {
-        await this.titleAddProduct.getText()
-    }
-
-    async verifyPageTitle() {
-        expect(await this.getPageTitle()).toEqual('Adicionar Produto')
-    }
-
     async createProduct(productName, productValue, productColors) {
         await this.inputProductName.setValue(productName)
         await this.inputProductValue.setValue(productValue)
@@ -66,6 +78,10 @@ export default class CreateProductPage {
 
     async clickOnSaveProduct() {
         await this.buttonSaveProduct.click()
+    }
+
+    async clickOnReturnToProductList() {
+        await this.returnToProductList.click()
     }
 
     async clickOnAddComponent() {

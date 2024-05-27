@@ -17,14 +17,13 @@ beforeEach(async () => {
     await listaDeProdutosPage.accessProductListScreen(PRODUCT_LIST)
 });
 
-describe('Delete item on product list screen', async () => {
-    it('[APP - CT03] - Should create product with success', async () => {
+describe('Create product without component', async () => {
+    it('[APP - CT04] - Should create product without components with success', async () => {
         await listaDeProdutosPage.clickOnAddProduct()
+        await createProductPage.verifyTitleAddProduct()
+ 
         await createProductPage.createProduct("Televisao", "1000,00", "Cinza")
         await createProductPage.clickOnSaveProduct()
-        await createProductPage.clickOnAddComponent()
-        await createProductPage.createComponent("Controle remoto", 2)
-        await createProductPage.clickOnSaveComponent()
-        await createProductPage.confirmRegisterComponent()
+        await createProductPage.verifyTitleEditProduct()
     })
 })

@@ -13,7 +13,8 @@ const elements = {
     button: {
         saveProduct: 'android=new UiSelector().className("android.widget.Button").text("SALVAR")',
         addComponent: '//*[@text="ADICIONAR COMPONENTE"]',
-        saveComponent: 'android=new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("SALVAR COMPONENTE"))'
+        saveComponent: 'android=new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text("SALVAR COMPONENTE"))',
+        returnToProductList: 'android=new UiSelector().text("LISTA DE PRODUTOS")'
     },
     component: {
         trash: 'android=new UiSelector().text("delete")'

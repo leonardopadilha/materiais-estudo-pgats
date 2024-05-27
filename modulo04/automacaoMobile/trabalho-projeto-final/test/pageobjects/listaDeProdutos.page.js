@@ -30,6 +30,10 @@ export default class ListaDeProdutosPage {
         await this.addProduct.click()
     }
 
+    async confirmDeleteWithSuccess() {
+        expect(await this.trashbutton).not.toBeExisting()
+    }
+
 
 
 }

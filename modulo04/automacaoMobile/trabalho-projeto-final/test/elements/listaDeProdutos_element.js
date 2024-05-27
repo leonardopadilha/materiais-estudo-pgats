@@ -6,7 +6,7 @@ const element = {
         trash: 'android=new UiSelector().packageName("com.example.lojinha").text("delete").instance(0)'
     },
     button: {
-        trash: 'android=new UiSelector().packageName("com.example.lojinha").text("delete").instance(0)',
+        trash: 'android=new UiSelector().text("Celular").fromParent(new UiSelector().text("delete"))',
         addProduct: 'android=new UiSelector().packageName("com.example.lojinha").text("ADICIONAR PRODUTO")'
     }
 }

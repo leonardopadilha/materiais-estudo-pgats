@@ -17,7 +17,16 @@ Resultado
 [The item should be deleted with success]
 
 ID: [APP - CT03]
-Condição de Teste: [Should create product with success]
+Condição de Teste: [Should create product and components with success]
+Pré-Condição
+[Access the create product with success]
+Passo a Passo
+[Fill inputs correctly]
+Resultado
+[The item should be created with success]
+
+ID: [APP - CT04]
+Condição de Teste: [Should create product without components with success]
 Pré-Condição
 [Access the create product with success]
 Passo a Passo
