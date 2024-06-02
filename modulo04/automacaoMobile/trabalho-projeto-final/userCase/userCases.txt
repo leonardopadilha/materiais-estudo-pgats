@@ -1,35 +1,35 @@
-ID: [APP - CT01]
-Condição de Teste: [Should login success with valid credentials]
+ID: APP - CT01
+Condição de Teste: Should login success with valid credentials
 Pré-Condição
-[Access the login screen]
+Access the login screen
 Passo a Passo
-[Enter the username and password correctly]
+Enter the username and password correctly
 Resultado
-[The product list screend shouls be displayed]
+The product list screend shouls be displayed
 
-ID: [APP - CT02]
-Condição de Teste: [Should delete item from product list]
+ID: APP - CT02
+Condição de Teste: Should delete item from product list
 Pré-Condição
-[Access the product list screen]
+Access the product list screen
 Passo a Passo
-[Click on trash button]
+Click on trash button
 Resultado
-[The item should be deleted with success]
+The item should be deleted with success
 
-ID: [APP - CT03]
-Condição de Teste: [Should create product and components with success]
+ID: APP - CT03
+Condição de Teste: Should create product and components with success
 Pré-Condição
-[Access the create product with success]
+Access the create product with success
 Passo a Passo
-[Fill inputs correctly]
+Fill inputs correctly
 Resultado
-[The item should be created with success]
+The item should be created with success
 
-ID: [APP - CT04]
-Condição de Teste: [Should create product without components with success]
+ID: APP - CT04
+Condição de Teste: Should create product without components with success
 Pré-Condição
-[Access the create product with success]
+Access the create product with success
 Passo a Passo
-[Fill inputs correctly]
+Fill inputs correctly
 Resultado
-[The item should be created with success]
+The item should be created with success
