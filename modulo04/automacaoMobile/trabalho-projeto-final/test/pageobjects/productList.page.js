@@ -1,7 +1,7 @@
 import { $, expect } from '@wdio/globals'
-import element from '../elements/listaDeProdutos_element.js'
+import element from '../elements/productList_element.js'
 
-export default class ListaDeProdutosPage {
+export default class ProductListPage {
     get productListElement() {
         return $(element.list.productList)
     }
