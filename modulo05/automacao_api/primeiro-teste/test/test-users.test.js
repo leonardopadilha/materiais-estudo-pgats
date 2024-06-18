@@ -1,13 +1,35 @@
 const request = require('supertest')
+const { faker } = require('@faker-js/faker');
 
 const rota = "http://localhost:3000"
 
 describe('Suíte de testes da api users...', () => {
-    it('Consulta todos os usuários...deve retornar status 200', async () => {
-        const response = await request(rota).get('/users')
-        expect(response.status).toEqual(200)
-        expect(response.body[0].id).not.toBeNull()
-        expect(response.body[0].id).toBeGreaterThan(0)
-    });
-});
 
+    beforeEach(() => {
+        user = {
+            nome: faker.internet.userName(),
+            telefone: "(99) 99999-9999",
+            email: faker.internet.email(),
+            senha: "123123"
+        }
+    });
+
+    describe('PUT users', () => {
+        it('Deve alterar usuário pesquisado via id', async () => {
+            const response = await request(rota).post('/users').send(user)
+
+            const newUser = {
+                nome: faker.internet.userName(),
+                telefone: faker.phone.number(),
+                email: faker.internet.email(),
+                senha: "xpto-xpto"
+            }
+
+            const updateUser = await request(rota).put(`/users/${response.body.id}`).send(newUser)
+            expect(updateUser.status).toEqual(201)
+            expect(updateUser.body.nome).toEqual(newUser.nome)
+            expect(updateUser.body.telefone).toEqual(newUser.telefone)
+            expect(updateUser.body.email).toEqual(user.email)
+        })
+    })
+})
