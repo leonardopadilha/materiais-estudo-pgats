@@ -1,7 +1,6 @@
-const { postUser } = require('../functions/users/postUser');
-const createUser = require('../functions/utils/users/createUser');
-
-const rota = "http://localhost:3000"
+const deleteUser = require('../../functions/users/deleteUser');
+const { postUser } = require('../../functions/users/postUser');
+const createUser = require('../../functions/utils/users/createUser');
 
 describe('Suíte de testes da api users...', () => {
 
@@ -15,7 +14,7 @@ describe('Suíte de testes da api users...', () => {
     
             const response = await postUser(user)
             expect(response.status).toEqual(422)
-            expect(response.text).toContain('Os seguintes campos são obrigatórios: nome')
+            expect(response.body).toEqual({ error: 'Os seguintes campos são obrigatórios: nome' })
         });
 
         it('Deve validar que o campo telefone é obrigatório', async () => {
@@ -47,14 +46,20 @@ describe('Suíte de testes da api users...', () => {
                     expect(response.body.id).not.toBeNull()
                     expect(response.body.nome).toEqual(user.nome)
                     expect(response.body.email).toEqual(user.email)
+
+            const delUser = await deleteUser(response.body.id)
+            expect(delUser.status).toEqual(204)
         })
 
         it('Quando cadastrar um usuário que já esteja na base, deve retornar 422', async () => {
-            await postUser(user)
+           const userdelete = await postUser(user)
 
             const response = await postUser(user)
             expect(response.status).toEqual(422)
             expect(response.text).toContain('E-mail já está em uso')
+
+            const delUser = await deleteUser(userdelete.body.id)
+            expect(delUser.status).toEqual(204)
         })
 
         it('Não deve cadastrar um usuário com os dados vazios', async () => {

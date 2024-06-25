@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "allure": "npx allure serve allure-results"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "dotenv": "^16.4.5",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.29.0",
+    "allure-jest": "^3.0.0-beta.3",
+    "jest-stare": "^2.5.1"
   }
 }
