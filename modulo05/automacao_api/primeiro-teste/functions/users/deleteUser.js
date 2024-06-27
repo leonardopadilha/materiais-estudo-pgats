@@ -1,6 +1,7 @@
+require('dotenv').config()
 const request = require('supertest')
 
-const rota = "http://localhost:3000"
+const rota = process.env.URL
 
 async function deleteUser(id) {
     const response = await request(rota).delete(`/users/${id}`)
