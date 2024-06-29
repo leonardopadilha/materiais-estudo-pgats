@@ -2,7 +2,7 @@ const { delConteudo } = require("../../functions/conteudos/deleteConteudo");
 const { postConteudo } = require("../../functions/conteudos/postConteudo");
 const createConteudo = require("../../functions/utils/conteudos/createConteudo");
 
-describe('Suíte de teste de conteúdos...', () => {
+describe('Suíte de teste de conteúdos com post...', () => {
     beforeEach(() => {
         conteudo = createConteudo()
     });
@@ -11,7 +11,7 @@ describe('Suíte de teste de conteúdos...', () => {
         const response = await postConteudo(conteudo)
         expect(response.status).toBe(201);
         expect(response.body.id).toBeDefined()
-        expect(response.body.nome).toEqual(conteudo.nome)
+        expect(response.body.titulo).toEqual(conteudo.titulo)
 
         const delete_conteudo = await delConteudo(response.body.id)
         expect(delete_conteudo.status).toBe(200)

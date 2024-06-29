@@ -10,11 +10,10 @@ describe('Suíte de testes da api users...', () => {
     });
 
     describe('GET users', () => {
-        it('Consulta todos os usuários...deve retornar status 200', async () => {
+        it('Valida que o array de usuários está vazio', async () => {
             const response = await getUsers()
             expect(response.status).toEqual(200)
-            expect(response.body[0].id).not.toBeNull()
-            expect(response.body[0].id).toBeGreaterThan(0)
+            expect(response.body).toEqual([])
         });
 
         it('Deve retornar os dados do cliente pesquisado por id válido', async () => {
@@ -22,8 +21,12 @@ describe('Suíte de testes da api users...', () => {
 
             const getUser = await getUniqueUser(response.body.id)
             expect(getUser.status).toEqual(200)
+            expect(getUser.body.id).toBeDefined()
             expect(getUser.body.nome).toEqual(user.nome)
             expect(getUser.body.email).toEqual(user.email)
+
+            const delUser = await deleteUser(response.body.id)
+            expect(delUser.status).toEqual(204)
         })
         it('Deve retornar erro quando o id do usuário não existir', async () => {
             const response = await postUser(user)
