@@ -19,6 +19,11 @@ class LoginPage {
     async expectLoginSuccess() {
         await expect(this.page).toHaveTitle(/TL Content/);
     }
+
+    async expectLoginInvalido(message) {
+        await expect(this.page.locator('[aria-labelledby="loginErrorModalLabel"] .modal-body'))
+                .toHaveText(message)
+    }
 }
 
 module.exports = {
