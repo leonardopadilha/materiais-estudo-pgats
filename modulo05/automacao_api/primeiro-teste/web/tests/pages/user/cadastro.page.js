@@ -35,6 +35,7 @@ class CadastroPage {
     async cadastroSucesso(mensagem) {
         const frase = await this.page.locator('#successModal .modal-body')
         await expect(frase).toContainText(mensagem)
+        await this.page.getByRole('button', { name: /ok/i}).click()
     }
 
     async verificarTabela(conteudo) {
@@ -42,8 +43,25 @@ class CadastroPage {
         await expect(tabela).toContainText(conteudo)
     }
 
-    async clickOk() {
-        await this.page.getByRole('button', { name: /ok/i}).click()
+    async clickOnExcluir() {
+        await this.page.getByRole('Button', { name: 'Excluir'}).click()
+    }
+
+    async confirmarExclusao(mensagem) {
+        const frase = await this.page.locator('#confirmDeleteModal .modal-body')
+        await expect(frase).toContainText(mensagem)
+        await this.page.locator('#confirmDeleteModal .modal-footer button:nth-child(2)').click()
+    }
+
+    async verificaExclusaoComSucesso(mensagem) {
+        const frase = await this.page.locator('#deleteSuccessModal .modal-body')
+        await expect(frase).toContainText(mensagem)
+        await this.page.getByRole('Button', { name: /ok/i }).click()
+    }
+
+    async verificarExclusaoEmailTabela() {
+        const dados = this.page.locator('#userList td:nth-child(3)')
+        await expect (dados).toHaveCount(0);
     }
 } 
 

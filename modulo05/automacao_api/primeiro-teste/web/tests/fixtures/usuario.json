@@ -4,5 +4,11 @@
         "telefone": "11999999999",
         "email": "teste@teste.com",
         "senha": "123456"
+      },
+      "deletado": {
+        "nome": "Usuário apagado",
+        "telefone": "21999999999",
+        "email": "usuario@apagado.com",
+        "senha": "1234567"
       }
 }
