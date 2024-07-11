@@ -1,0 +1,26 @@
+{
+    "unidade": {
+        "titulo": "Realizar teste unitário",
+        "descricao": "Verifica o funcionamento do teste unitário.",
+        "opcao": "Teste de Unidade",
+        "conteudo": "O teste unitário é um teste muito importante."
+    },
+    "integracao": {
+        "titulo": "Realizar teste de integracao",
+        "descricao": "Verifica o funcionamento do teste integracao.",
+        "opcao": "Teste de Integração",
+        "conteudo": "O teste de integracao é um teste muito importante."
+    },
+    "aceitacao": {
+        "titulo": "Realizar teste de aceitacao",
+        "descricao": "Verifica o funcionamento do teste aceitacao.",
+        "opcao": "Teste de Aceitação",
+        "conteudo": "O teste de integracao é um teste muito importante."
+    },
+    "perfomance": {
+        "titulo": "Realizar teste de perfomance",
+        "descricao": "Verifica o funcionamento do teste de perfomance.",
+        "opcao": "Teste de Performance",
+        "conteudo": "O teste de perfomance é um teste muito importante."
+    }
+}

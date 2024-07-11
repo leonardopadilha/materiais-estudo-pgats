@@ -1,8 +1,13 @@
 const { delConteudo } = require("../../functions/conteudos/deleteConteudo");
 const { postConteudo } = require("../../functions/conteudos/postConteudo");
 const createConteudo = require("../../functions/utils/conteudos/createConteudo");
+const { Conteudo } = require('../../../web/models/delete')
 
 describe('Suíte de teste de conteúdos com post...', () => {
+    beforeAll(async () => {
+        await Conteudo.deletaInformacoes('conteudo')
+    })
+
     beforeEach(() => {
         conteudo = createConteudo()
     });

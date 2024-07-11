@@ -4,7 +4,9 @@ const { test, expect } = require('@playwright/test');
 const { LoginPage } = require('../../pages/login.page');
 const { Menu } = require('../../Components/menu');
 const { CadastroPage } = require('../../pages/user/cadastro.page');
-const data = require('../../fixtures/usuario.json')
+
+const data = require('../../fixtures/usuario.json');
+const { Conteudo } = require('../../../models/delete');
 
 let loginPage;
 let cadastroPage
@@ -15,6 +17,10 @@ const SENHA = process.env.SENHA
 const MENU_CADASTRO_USUARIOS = process.env.MENU_CADASTRO_USUARIOS
 
 const URL_API = "http://localhost:3000/users"
+
+test.beforeAll(async () => {
+  await Conteudo.deletaInformacoes('users')
+})
 
 test.beforeEach(async ({ page }) => {
   loginPage = new LoginPage(page);

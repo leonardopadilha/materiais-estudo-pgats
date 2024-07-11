@@ -1,8 +1,13 @@
 const deleteUser = require('../../functions/users/deleteUser');
 const { postUser } = require('../../functions/users/postUser');
 const createUser = require('../../functions/utils/users/createUser');
+const { Conteudo } = require('../../../web/models/delete');
 
 describe('Suíte de testes da api users...', () => {
+    
+    beforeAll(async () => {
+        await Conteudo.deletaInformacoes('users')
+    })
 
     beforeEach(() => {
         user = createUser()
