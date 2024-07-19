@@ -32,13 +32,13 @@ Instalar as dependências
   npm install
 ```
 
-## Execução dos testes de API (dentro da pasta API)
+## Execução dos testes de API (dentro da pasta primeiro-teste/api)
 
 ```bash
   npm run test
 ```
 
-## Execução dos testes WEB (dentro da pasta WEB)
+## Execução dos testes WEB (dentro da pasta primeiro-teste/web)
 
 ```bash
   npm run test
