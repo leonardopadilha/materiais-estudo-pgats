@@ -8,10 +8,16 @@ class RegisterPage {
             })
     }
 
-    regiserNewUser(name, email) {
+    registerNewUser(name, email) {
         cy.get(el.inputName).type(name)
         cy.get(el.inputEmail).type(email)
         cy.get(el.btnSignup).click()
+    }
+
+    title(title) {
+        cy.get(el.titleUser)
+        .should('be.visible')
+            .check(title)
     }
 }
 

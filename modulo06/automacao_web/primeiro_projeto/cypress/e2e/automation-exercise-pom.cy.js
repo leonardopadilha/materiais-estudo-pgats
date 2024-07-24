@@ -8,13 +8,13 @@ const name = user.name()
 const email = user.email()
 
 describe('#Register a new user', () => {
-    it('Test Case 1: Register User', () => {
+    it('Test Case 1: Register user', () => {
         homePage.go('/')
         homePage.validAccessHome()
         menu.clickOn(linkMenu.SIGNUP)
 
         register.validAccessMenuRegister()
-        register.regiserNewUser(name, email)
+        register.registerNewUser(name, email)
 
     })
 })

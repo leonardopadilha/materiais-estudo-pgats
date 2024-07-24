@@ -10,6 +10,7 @@ exports.el = {
     formRegisterNewUser: '.signup-form h2',
     inputName: '[data-qa="signup-name"]',
     inputEmail: '[data-qa="signup-email"]',
-    btnSignup: '[data-qa="signup-button"]'
+    btnSignup: '[data-qa="signup-button"]',
+    titleUser: '[type=radio]'
 
 }
