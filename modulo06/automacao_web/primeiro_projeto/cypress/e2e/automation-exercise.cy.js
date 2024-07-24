@@ -5,7 +5,7 @@ describe('Automation Exercise', () => {
     it('Test Case 1: Cadastrar usuário', () => {
         const email = faker.internet.email()
 
-        cy.visit('https://www.automationexercise.com/')
+        cy.visit('/')
 
         //cy.get('[href$=login]').click()
         cy.contains(' Signup').click()
