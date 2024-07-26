@@ -1,0 +1,22 @@
+{
+  "title": "Mr",
+  "name": "Peter Parker",
+  "password": "123456",
+  "birth": {
+    "day": "15",
+    "month": "October",
+    "year": "1925"
+  },
+  "newsletter": "yes",
+  "offers": "yes",
+  "firstName": "Peter",
+  "lastName": "Parker",
+  "company": "Marvel",
+  "address": "Street Marvel",
+  "address2": "Street Marvel 2",
+  "country": "United States",
+  "state": "State of software testing",
+  "city": "City of software testing",
+  "zipcode": "63214",
+  "mobile": "63214"
+}
