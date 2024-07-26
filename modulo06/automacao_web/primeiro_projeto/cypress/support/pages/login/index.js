@@ -1,9 +1,9 @@
 import { el } from '../../elements/elements'
 
 class LoginPage {
-    validLoginPage() {
+    validLoginPage(url) {
         cy.url()
-            .should('include', 'login')
+            .should('include', url)
     }
 
     newUser(name, email) {

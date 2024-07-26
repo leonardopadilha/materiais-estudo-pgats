@@ -9,23 +9,23 @@ class RegisterPage {
     }
 
     #createPassword() {
-        cy.get('[name=password]')
+        cy.get(el.inputPassword)
             .should('be.visible')
                 .type('123456', { log: false })
     }
 
     #dateOfBirthday(day, month, year) {
-        cy.get('[data-qa="days"]')
+        cy.get(el.birthDay)
             .select(day)
             .invoke('val')
             .should('deep.equal', day)
 
-    cy.get('[name="months"]')
+    cy.get(el.birthMonth)
             .select(month)
             .invoke('val')
             .should('deep.equal', '10')
 
-    cy.get('[data-qa="years"]')
+    cy.get(el.birthYear)
             .select(year)
             .invoke('val')
             .should('deep.equal', year)
@@ -33,62 +33,62 @@ class RegisterPage {
 
     #confirmNewsletter(answer) {
         if (answer == 'yes') {
-            cy.get('#newsletter')
+            cy.get(el.newsletter)
                 .check()
         }
     }
     #receiveOffers(answer) {
         if (answer == 'yes') {
-            cy.get('#optin')
+            cy.get(el.offers)
                 .check()
         }
     }
 
     #fistName(firstName) {
-        cy.get('#first_name')
+        cy.get(el.inpFirstName)
             .type(firstName)
     }
 
     #lastName(lastName) {
-        cy.get('#last_name')
+        cy.get(el.inpLastName)
             .type(lastName)
     }
 
     #company(company) {
-        cy.get('[data-qa="company"]')
+        cy.get(el.company)
             .type(company)
     }
 
     #firstAddress(address) {
-        cy.get('[name="address1"]')
+        cy.get(el.address1)
             .type(address)
     }
 
     #secondAddress(address) {
-        cy.get('[name="address2"]')
+        cy.get(el.address2)
             .type(address)
     }
 
     #country(country) {
-        cy.get('#country')
+        cy.get(el.selectCountry)
             .select(country)
             .invoke('val')
             .should('deep.equal', country)
     }
 
     #location(state, city, zipcode) {
-        cy.get('[name="state"]')
+        cy.get(el.inpState)
             .type(state)
 
-        cy.get('[data-qa="city"]')
+        cy.get(el.inpCity)
             .type(city)
 
-        cy.get('[data-qa="zipcode"]')
+        cy.get(el.inpZipcode)
             .type(zipcode)
     }
 
     #phoneNumber(phoneNumber) {
-        cy.get('.login-form #mobile_number')
+        cy.get(el.mobile)
             .type(phoneNumber)
     }
 
@@ -107,31 +107,24 @@ class RegisterPage {
         this.#country(user.country)
         this.#location(user.state, user.city, user.zipcode)
         this.#phoneNumber(user.mobile)
+        this.#confirmRegister()
     }
 
-    confirmRegister() {
-        cy.findByRole('button', { name: /Create Account/i })
+    #confirmRegister() {
+        cy.findByRole('button', { name: /create Account/i })
             .click()
     }
 
-    succedRegister() {
+    succedRegister(msg) {
         cy.url()
-            .should('include', 'account_created')
+            .should('include', el.accountCreated)
 
-        cy.get('.title.text-center')
+        cy.get(el.msgAccountCreated)
             .then((element) => {
                 expect(element).to.be.visible
-                expect(element.text()).to.be.equal('Account Created!')
+                expect(element.text()).to.be.equal(msg)
             })
     }
-
-
-
-
-
-
-
-
 }
 
 export default new RegisterPage()

@@ -11,6 +11,24 @@ exports.el = {
     inputName: '[data-qa="signup-name"]',
     inputEmail: '[data-qa="signup-email"]',
     btnSignup: '[data-qa="signup-button"]',
-    titleUser: '[type=radio]'
-
+    titleUser: '[type=radio]',
+    inputPassword: '[name=password]',
+    birthDay: '[data-qa="days"]',
+    birthMonth: '[name="months"]',
+    birthYear: '[data-qa="years"]',
+    newsletter: '#newsletter',
+    offers: '#optin',
+    inpFirstName: '#first_name',
+    inpLastName: '#last_name',
+    company: '[data-qa="company"]',
+    address1: '[name="address1"]',
+    address2: '[name="address2"]',
+    selectCountry: '#country',
+    inpState: '[name="state"]',
+    inpCity: '[data-qa="city"]',
+    inpZipcode: '[data-qa="zipcode"]',
+    mobile: '.login-form #mobile_number',
+    accountCreated: 'account_created',
+    msgAccountCreated: '.title.text-center',
+    carouselHome: '#slider-carousel .carousel-inner'
 }

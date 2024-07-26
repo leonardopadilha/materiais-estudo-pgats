@@ -9,14 +9,6 @@ class User {
     email() {
         return faker.internet.email()
     }
-
-    firstName() {
-        return faker.person.firstName()
-    }
-
-    lastName() {
-        return faker.person.lastName()
-    }
 }
 
 export default new User()

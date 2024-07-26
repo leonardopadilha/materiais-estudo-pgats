@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { el } from '../../elements/elements'
 
 class HomePage {
     go(rota) {
@@ -6,7 +7,7 @@ class HomePage {
     }
 
     validAccessHome() {
-        cy.get('#slider-carousel .carousel-inner')
+        cy.get(el.carouselHome)
             .should('be.visible')
     }
 }

@@ -22,12 +22,11 @@ describe('#Register a new user', () => {
             const userData = newUser
 
             menu.clickOn(linkMenu.SIGNUP)
-            login.validLoginPage()
-
+            login.validLoginPage('login')
             login.newUser(name, email)
+
             register.newUserForm(userData)
-            register.confirmRegister()
-            register.succedRegister()
+            register.succedRegister('Account Created!')
         })
     })
 })
