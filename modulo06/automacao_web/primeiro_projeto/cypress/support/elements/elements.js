@@ -30,5 +30,9 @@ exports.el = {
     mobile: '.login-form #mobile_number',
     accountCreated: 'account_created',
     msgAccountCreated: '.title.text-center',
-    carouselHome: '#slider-carousel .carousel-inner'
+    carouselHome: '#slider-carousel .carousel-inner',
+    logInEmail: '[data-qa="login-email"]',
+    logInPassword: '[data-qa="login-password"]',
+    logInBtnconfirm: '[data-qa="login-button"]',
+    msgincorrectLogIn: '.login-form p'
 }

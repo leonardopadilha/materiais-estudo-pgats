@@ -3,7 +3,7 @@ const linkMenu = {
     PRODUCTS: "Products",
     CART: "Cart",
     SIGNUP: ' Signup',
-    LOGOUT: "Logout",
+    LOGOUT: " Logout",
     DELETE_ACCOUNT: "DeleteAccount",
     CONTACT_US: "ContactUs",
 }

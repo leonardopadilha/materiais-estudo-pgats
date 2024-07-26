@@ -7,31 +7,31 @@ class Menu {
     clickOn(link) {
         switch(link) {
             case linkMenu.HOME: 
-                cy.contains(el.home).click()
+                cy.contains(el.home).should('be.visible').click()
                 break;
 
             case linkMenu.PRODUCTS: 
-                cy.contains(el.products).click()
+                cy.contains(el.products).should('be.visible').click()
                 break;
 
             case linkMenu.CART: 
-                cy.contains(el.cart).click()
+                cy.contains(el.cart).should('be.visible').click()
                 break;
 
                 case linkMenu.SIGNUP: 
-                    cy.get(el.signup).click()
+                    cy.get(el.signup).should('be.visible').click()
                 break;
 
             case linkMenu.LOGOUT: 
-                cy.contains(el.logout).click()
+                cy.contains(el.logout).should('be.visible').click()
                 break;
 
             case linkMenu.DELETE_ACCOUNT: 
-                cy.contains(el.deleteAccount).click()
+                cy.contains(el.deleteAccount).should('be.visible').click()
                 break;
 
             case linkMenu.CONTACT_US: 
-                cy.contains(el.contactUs).click()
+                cy.contains(el.contactUs).should('be.visible').click()
                 break;
         }
         
