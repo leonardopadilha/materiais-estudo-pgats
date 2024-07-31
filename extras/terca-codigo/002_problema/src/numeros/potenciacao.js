@@ -5,6 +5,10 @@ se executarmos 9119 na função, sairá 811181, porque 9 ao quadrado é 81, 1 ao
 */
 
 function potenciacao(numero) {
+    if (numero < 0) {
+        return 0
+    }
+
     const numeroElevado = []
     const novoNumero = numero.toString().split("")
 

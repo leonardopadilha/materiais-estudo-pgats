@@ -7,8 +7,12 @@ describe('Numeros', () => {
             assert.equal(potenciacao(9119), 811181)
         })
 
-        it('Deve retornar o número 0o0 para a entrada 0o0', () => {
-            assert.equal(potenciacao(0o0), 0o0);
+        it('Deve retornar o número 0 para a entrada 0', () => {
+            assert.equal(potenciacao(0), 0);
+        })
+
+        it('Deve retornar o número 0 para a entrada -5', () => {
+            assert.equal(potenciacao(-5), 0);
         })
 
         it('Deve retornar o número 111111 para a entrada 111111', () => {
