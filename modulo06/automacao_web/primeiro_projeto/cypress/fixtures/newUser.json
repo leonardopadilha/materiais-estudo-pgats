@@ -11,6 +11,7 @@
   "offers": "yes",
   "firstName": "Peter",
   "lastName": "Parker",
+  "fullName": "Peter Parker",
   "company": "Marvel",
   "address": "Street Marvel",
   "address2": "Street Marvel 2",
@@ -18,5 +19,6 @@
   "state": "State of software testing",
   "city": "City of software testing",
   "zipcode": "63214",
+  "addressCompleted": "City of software testing State of software testing 63214",
   "mobile": "63214"
 }
