@@ -11,11 +11,11 @@ class Menu {
                 break;
 
             case linkMenu.PRODUCTS: 
-                cy.contains(el.products).should('be.visible').click()
+                cy.get(el.products).should('be.visible').click()
                 break;
 
             case linkMenu.CART: 
-                cy.contains(el.cart).should('be.visible').click()
+                cy.get(el.cart).first().should('be.visible').click()
                 break;
 
                 case linkMenu.SIGNUP: 
@@ -31,7 +31,7 @@ class Menu {
                 break;
 
             case linkMenu.CONTACT_US: 
-                cy.contains(el.contactUs).should('be.visible').click()
+                cy.get(el.contactUs).should('be.visible').click()
                 break;
         }
         
