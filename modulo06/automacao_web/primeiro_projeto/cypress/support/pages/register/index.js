@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 import { el } from '../../elements/elements'
 
 class RegisterPage {
@@ -124,6 +125,11 @@ class RegisterPage {
                 expect(element).to.be.visible
                 expect(element.text()).to.be.equal(msg)
             })
+    }
+
+    clickOnContinue() {
+        cy.get(el.btnContinue)
+            .click()
     }
 }
 

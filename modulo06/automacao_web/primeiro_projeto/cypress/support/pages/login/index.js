@@ -28,6 +28,11 @@ class LoginPage {
             .should('contain', msg)
     }
 
+    emailAlready(msg) {
+        cy.get(el.msgEmailAlready)
+            .should('contain', msg)
+    }
+
 }
 
 export default new LoginPage()
