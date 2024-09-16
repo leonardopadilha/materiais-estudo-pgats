@@ -1,0 +1,15 @@
+{
+  "name": "aulas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ex01.js",
+  "scripts": {
+    "test:02": "k6 run ./ex02.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/k6": "^0.53.1"
+  }
+}
