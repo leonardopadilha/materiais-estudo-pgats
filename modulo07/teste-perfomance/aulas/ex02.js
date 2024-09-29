@@ -53,3 +53,8 @@ export default function() {
 // k6 run .\ex02.js --http-debug
 // k6 run .\ex02.js --http-debug="full" => Retorna o html da página
 // npm install -D @types/k6
+
+/*
+tb é possível utilizar assim:
+productList.html().find('.container h3').attr('name')
+*/
