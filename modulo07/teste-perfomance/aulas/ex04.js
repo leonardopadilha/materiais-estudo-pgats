@@ -71,6 +71,8 @@ export default function() {
     sleep(1)
 }
 
+// Interação de página web via protocolo
+
 // console.log(respostaHomePageLojinha.status)
 // console.log(respostaHomePageLojinha.status_text)
 // console.log(respostaHomePageLojinha.remote_ip)

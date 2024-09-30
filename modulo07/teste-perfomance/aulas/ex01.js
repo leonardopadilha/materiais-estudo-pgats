@@ -15,3 +15,11 @@ export default function() {
   
   sleep(numeroAleatorioMenorQue(5.1)); // User think time
 }
+
+/*
+Cloud k6 - (Lembrando que também é preciso informar o nome e o projectId)
+
+k6 cloud login --token <token>
+k6 cloud run ex01.
+*/
+
